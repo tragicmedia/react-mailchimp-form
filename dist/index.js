@@ -169,7 +169,8 @@
             fields = _props2.fields,
             styles = _props2.styles,
             className = _props2.className,
-            buttonClassName = _props2.buttonClassName;
+            buttonClassName = _props2.buttonClassName,
+            idName = _props2.id;
 
         var messages = _extends({}, Mailchimp.defaultProps.messages, this.props.messages);
         var status = this.state.status;
@@ -180,7 +181,7 @@
           fields.map(function (input) {
             return _react2.default.createElement("input", _extends({}, input, {
               key: input.name,
-              id: "react-mailchimp-form-" + input.name,
+              id: idName,
               onChange: function onChange(_ref2) {
                 var target = _ref2.target;
                 return _this4.setState(_defineProperty({}, input.name, target.value));
