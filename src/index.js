@@ -45,6 +45,7 @@ class Mailchimp extends React.Component {
         {fields.map(input =>
           <input
             {...input}
+            id={`react-mailchimp-form-${input.name}`}
             key={input.name}
             onChange={({ target }) => this.setState({ [input.name]: target.value })}
             defaultValue={this.state[input.name]}
