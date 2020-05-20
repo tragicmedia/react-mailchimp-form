@@ -34,7 +34,7 @@ class Mailchimp extends React.Component {
   }
 
   render() {
-    const { fields, styles, className, buttonClassName } = this.props;
+    const { fields, styles, className, buttonClassName, idName } = this.props;
     const messages = {
       ...Mailchimp.defaultProps.messages,
       ...this.props.messages
@@ -45,7 +45,7 @@ class Mailchimp extends React.Component {
         {fields.map(input =>
           <input
             {...input}
-            id={`react-mailchimp-form-${input.name}`}
+            id={idName}
             key={input.name}
             onChange={({ target }) => this.setState({ [input.name]: target.value })}
             defaultValue={this.state[input.name]}
@@ -102,7 +102,8 @@ Mailchimp.propTypes = {
   fields: PropTypes.array,
   styles: PropTypes.object,
   className: PropTypes.string,
-  buttonClassName: PropTypes.string
+  buttonClassName: PropTypes.string,
+  idName: PropTypes.string
 };
 
 export default Mailchimp;
